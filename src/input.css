@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.timedisplay, .abouttext, .copyrightdiv {
+    animation: fadeIn 2.7s ease-in-out;
+}
+
+.pfpdiv {
+    filter: grayscale(70%);
+    transition: transform 0.5s ease, filter 0.5s ease;
+    animation: fadeInFull 2.7s ease-in-out;
+}
+
+.pfpdiv:hover {
+    filter: grayscale(70%) drop-shadow(0 0 15px rgb(255, 123, 0));
+    transform: translateY(-50px) scale(1.1);
+}
+
+.player-div {
+    opacity: 0.5;
+    animation: fadeIn05 2.7s ease-in-out;
+}
+
+.songtitlediv {
+    font-family: 'Share Tech Mono';
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    filter: drop-shadow(0 0 15px rgb(255, 123, 0));
+}
+
+.socials-logos {
+    transition: transform 0.5s ease, opacity 0.5s ease, fill 0.5s ease, filter 0.5s ease;
+    opacity: 0.4;
+    color: rgb(255, 123, 0);
+    animation: fadeIn04 2.7s ease-in-out;
+}
+
+.socials-logos:hover {
+    fill: rgb(255, 123, 0);
+    transform: scale(1.1);
+    opacity: 0.7;
+    filter: drop-shadow(0 0 0.75rem rgb(255, 123, 0));
+}
+
+.timedisplay {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Share Tech Mono';
+    font-size: large;
+    opacity: 0.7;
+}
+
+.abouttext {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Share Tech Mono';
+    opacity: 0.7;
+    font-size: x-large;
+    filter: drop-shadow(0 0 15px rgb(255, 123, 0));
+}
+
+.copyrightdiv {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Share Tech Mono';
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+.playbutton1{
+    transition: transform 0.5s ease, filter 0.5s ease;
+    opacity: 0.7;
+}
+
+.playbutton1 path {
+    fill: rgb(0, 0, 0);
+    transition:  fill 0.5s ease;
+}
+
+.playbutton1:hover path {
+    fill: rgb(255, 123, 0);
+}
+
+.playbutton1:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgb(255, 123, 0));
+}
+
+.pausebutton1 {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    opacity: 0.7;
+}
+
+.pausebutton1 path {
+    fill: rgb(0, 0, 0);
+    transition:  fill 0.5s ease;
+}
+
+.pausebutton1:hover path {
+    fill: rgb(255, 123, 0);
+}
+
+.pausebutton1:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgb(255, 123, 0));
+}
+
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('/pictures/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .9;
+  visibility: visible;
+}
+
+input[type="range"] {
+  writing-mode: vertical-lr;
+  direction: rtl;
+}
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 37px;
+      background-color: #00000000;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 10px;
+      -webkit-appearance: none;
+      color: #FF7B00;
+      margin-top: -1px;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 10px;
+      height: 10px;
+      -webkit-appearance: none;
+      cursor: ew-resize;
+      background: #434343;
+      box-shadow: -80px 0 0 80px #FF7B00;
+    }
+
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+  background-color: #FF7B00; 
+  width: 12px;
+  border-radius: 5px;
+  border-color: rgba(255, 255, 255, 0.75);
+}
+input[type="range"]::-moz-range-track {  
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 12px;
+  border-radius: 5px;
+}
+input[type="range"]::-moz-range-thumb {  
+  background-color: #111111;
+  height: 20px;
+  width: 25px;
+  border-color: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: #FF7B00; 
+}
+input[type="range"]::-ms-fill-upper {  
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 0.7;}
+}
+
+@keyframes fadeIn05 {
+    from { opacity: 0; }
+    to { opacity: 0.5;}
+}
+
+@keyframes fadeInFull {
+    from { opacity: 0; }
+    to { opacity: 1;}
+}
+
+@keyframes fadeIn04 {
+  from { opacity: 0; }
+  to { opacity: 0.4;}
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+
+@font-face {
+  font-family: 'Share Tech Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/techmono.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
