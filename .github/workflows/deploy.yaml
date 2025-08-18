@@ -32,10 +32,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact
-        with:
-          path: './src'
+  # Removed deprecated upload-pages-artifact step
 
   deploy:
     environment:
