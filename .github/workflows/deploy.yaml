@@ -30,9 +30,13 @@ jobs:
         run: npx tailwindcss -i ./src/input.css -o ./src/style.css --minify
         
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v4
         
-  # Removed deprecated upload-pages-artifact step
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: './src'
 
   deploy:
     environment:
