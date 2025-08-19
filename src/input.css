@@ -26,7 +26,7 @@
 
 .pfpdiv:hover {
     filter: grayscale(70%) drop-shadow(0 0 15px rgb(255, 123, 0));
-    transform: translateY(50px) scale(1.1);
+    transform: translateY(-50px) scale(1.1);
 }
 
 .player-div {
